@@ -23,24 +23,30 @@ function TransactionTable({ transactions, deleteExpense, updateExpense }) {
   const [formData, setFormData] = useState({
     id: null,
     title: "",
-    amount: "",
+    price: "",
     category: "",
     date: "",
   });
 
   const openEditModal = (txn) => {
-    setFormData({ ...txn });
+    setFormData({
+    id: txn.id,
+    title: txn.title,
+    price: txn.amount, 
+    category: txn.category,
+    date: txn.date
+  });
     setEditModal(true);
   };
 
   const closeEditModal = () => {
-    setFormData({ id: null, title: "", amount: "", category: "", date: "" });
+    setFormData({ id: null, title: "", price: "", category: "", date: "" });
     setEditModal(false);
   };
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-    updateExpense({ ...formData, amount: parseFloat(formData.amount) });
+    updateExpense({ ...formData, amount: parseFloat(formData.price) });
     closeEditModal();
   };
 
@@ -119,9 +125,9 @@ function TransactionTable({ transactions, deleteExpense, updateExpense }) {
                   name="price"
                   type="number"
                   placeholder="Amount"
-                  value={formData.amount}
+                  value={formData.price}
                   onChange={(e) =>
-                    setFormData({ ...formData, amount: e.target.value })
+                    setFormData({ ...formData, price: e.target.value })
                   }
                   required
                 />

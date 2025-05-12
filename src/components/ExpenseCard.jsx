@@ -5,7 +5,7 @@ function ExpenseCard({ addExpense, transactions }) {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
-    amount: '',
+    price: '',
     category: '',
     date: ''
   });
@@ -22,14 +22,14 @@ function ExpenseCard({ addExpense, transactions }) {
     e.preventDefault();
     const newExpense = {
       title: formData.title,
-      amount: parseFloat(formData.amount),
+      amount: parseFloat(formData.price),
       category: formData.category,
       date: formData.date
     };
 
     const success = addExpense(newExpense);
     if (success) {
-      setFormData({ title: '', amount: '', category: '', date: '' });
+      setFormData({ title: '', price: '', category: '', date: '' });
       setShowModal(false);
     }
   };

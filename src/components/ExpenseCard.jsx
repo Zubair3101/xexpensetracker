@@ -5,7 +5,7 @@ function ExpenseCard({ addExpense, transactions }) {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
-    amount: '',
+    price: '',
     category: '',
     date: ''
   });
@@ -22,7 +22,7 @@ function ExpenseCard({ addExpense, transactions }) {
     e.preventDefault();
     const newExpense = {
       title: formData.title,
-      amount: parseFloat(formData.amount),
+      price: parseFloat(formData.price),
       category: formData.category,
       date: formData.date
     };

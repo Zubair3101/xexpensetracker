@@ -39,7 +39,7 @@ function ExpenseCard({ addExpense, transactions }) {
       <div>
         <p>Expense: <strong>₹{totalExpense}</strong></p>
       </div>
-      <button className='expense-btn' onClick={() => setShowModal(true)}>+Add Expense</button>
+      <button className='expense-btn' onClick={() => setShowModal(true)}>+ Add Expense</button>
 
       {showModal && (
         <div className="exp-modal-overlay">

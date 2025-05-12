@@ -25,7 +25,7 @@ function BalanceCard({balance, setBalance}) {
         <div>
             <p>Wallet Balance: <strong>{balance}</strong></p>
         </div>
-        <button className='wallet-btn' onClick={handleOpen}>+Add Income</button>
+        <button className='wallet-btn' onClick={handleOpen}>+ Add Income</button>
 
         {showModal && (
         <div className="modal-overlay">

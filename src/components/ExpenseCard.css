@@ -1,0 +1,133 @@
+.expense-disp {
+  height: 150px;
+  width: 300px;
+  background-color: #9b9b9b;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.expense-disp p {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.expense-disp strong {
+  color: #f4bb4a;
+}
+
+.expense-btn {
+  background: linear-gradient(
+    to right,
+    #fca5a5,
+    #ef4444
+  ); /* light red to deep red */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px; /* pill shape */
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.expense-btn:hover {
+  background: linear-gradient(
+    to right,
+    #f87171,
+    #dc2626
+  ); /* darker red hover effect */
+}
+
+.exp-form-sec {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.exp-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.exp-modal-content {
+  background: #efefef;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  color: black;
+}
+
+.exp-modal-content input {
+  width: 40%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 10px;
+  margin-top: 0;
+  border: 0px;
+  margin-bottom: 0;
+}
+
+.exp-modal-content select {
+  width: 175px;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 0px;
+}
+
+.add-exp-btn {
+  background: orange;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  width: 44%;
+}
+
+.add-exp-btn:hover {
+  background: greenyellow;
+}
+
+.can-exp-btn {
+  background: lightgrey;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.can-exp-btn:hover {
+  background: red;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}

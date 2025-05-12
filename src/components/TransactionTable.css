@@ -1,0 +1,155 @@
+.transaction-sec h2{
+    margin-bottom: 10px;
+}
+
+.transaction-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.transaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.no-transactions {
+  font-size: 1.2rem;
+  color: black;
+  margin: 0;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: black;
+}
+
+.title {
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: gray;
+  margin: 4px 0px 2px 0px;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.amount {
+  color: orange;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.actions button {
+  border: none;
+  padding: 8px;
+  margin-left: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+}
+
+.del-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #ffcc00;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pagination button {
+  border: none;
+  padding: 10px 14px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pagination span {
+  background-color: #219d87;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.update-btn {
+  background: orange;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.update-btn:hover {
+  background: greenyellow;
+}
+
+.cancel-btn {
+  background: lightgrey;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: red;
+}
+
+
+@media screen and (min-width: 100px) and (max-width: 1024px) {
+  .transaction-row{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .right-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .amount {
+    margin-left: 50px;
+  }
+}

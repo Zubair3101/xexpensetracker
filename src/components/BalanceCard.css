@@ -1,0 +1,112 @@
+.wallet-disp {
+  height: 150px;
+  width: 300px;
+  background-color: #9b9b9b;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.wallet-disp p {
+  margin-top: 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.wallet-disp strong {
+  color: #9dff5b;
+}
+
+.wallet-btn {
+  background: linear-gradient(to right, #9dff5b, #32cd32);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px; /* full pill shape */
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.wallet-btn:hover {
+  background: linear-gradient(to right, #34d399, #28a745);
+}
+
+/* Modal styles */
+
+.form-sec {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px); 
+  background-color: rgba(255, 255, 255, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #EFEFEF;
+  padding: 20px;
+  border-radius: 12px;
+  width: 500px;
+  color: black;
+}
+
+.modal-content input {
+  width: 50%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.add-btn {
+  background: orange;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px; 
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.add-btn:hover {
+  background: greenyellow;
+}
+
+.can-btn {
+  background: lightgrey;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px; 
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.can-btn:hover {
+  background: red;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}

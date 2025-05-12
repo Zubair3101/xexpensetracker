@@ -47,7 +47,7 @@ function ExpenseCard({ addExpense, transactions }) {
             <h2>Add Expense</h2>
             <form onSubmit={handleSubmit} className='exp-form-sec'>
               <input name="title" value={formData.title} onChange={handleChange} placeholder="Title" required />
-              <input name="amount" type="number" value={formData.amount} onChange={handleChange} placeholder="Price" required />
+              <input name="price" type="number" value={formData.amount} onChange={handleChange} placeholder="Price" required />
               <select name="category" value={formData.category} onChange={handleChange} required>
                 <option value="">Select Category</option>
                 <option value="food">Food</option>

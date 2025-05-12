@@ -116,7 +116,7 @@ function TransactionTable({ transactions, deleteExpense, updateExpense }) {
                   required
                 />
                 <input
-                  name="amount"
+                  name="price"
                   type="number"
                   placeholder="Amount"
                   value={formData.amount}

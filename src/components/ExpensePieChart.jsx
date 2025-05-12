@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 
-function ExpensePieChart({ transactions }) {
+function ExpensePieChart({ expenses }) {
   // Step 1: Sum up category-wise totals
   const totals = {
     food: 0,
@@ -9,7 +9,7 @@ function ExpensePieChart({ transactions }) {
     travel: 0
   };
 
-  transactions.forEach(txn => {
+  expenses.forEach(txn => {
     if (totals[txn.category] !== undefined) {
       totals[txn.category] += txn.amount;
     }

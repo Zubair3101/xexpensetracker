@@ -9,14 +9,14 @@ import {
   Cell,
 } from "recharts";
 
-function ExpenseBarChart({ transactions }) {
+function ExpenseBarChart({ expenses }) {
   const categoryCounts = {
     food: 0,
     travel: 0,
     entertainment: 0,
   };
 
-  transactions.forEach((txn) => {
+  expenses.forEach((txn) => {
     if (categoryCounts[txn.category] !== undefined) {
       categoryCounts[txn.category]++;
     }

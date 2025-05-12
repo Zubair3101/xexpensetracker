@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./ExpenseCard.css";
 
-function ExpenseCard({ addExpense, transactions }) {
+function ExpenseCard({ addExpense, expenses }) {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
@@ -11,7 +11,7 @@ function ExpenseCard({ addExpense, transactions }) {
   });
 
   
-  const totalExpense = transactions.reduce((acc, txn) => acc + txn.amount, 0);
+  const totalExpense = expenses.reduce((acc, txn) => acc + txn.amount, 0);
   const today = new Date().toISOString().split("T")[0];
 
   const handleChange = (e) => {

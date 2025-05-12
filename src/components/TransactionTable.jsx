@@ -12,13 +12,13 @@ const iconMap = {
 
 const ITEMS_PER_PAGE = 3;
 
-function TransactionTable({ transactions, deleteExpense, updateExpense }) {
+function TransactionTable({ expenses, deleteExpense, updateExpense }) {
   const [page, setPage] = useState(1);
   const [editModal, setEditModal] = useState(null); // stores the item being edited
 
-  const totalPages = Math.ceil(transactions.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(expenses.length / ITEMS_PER_PAGE);
   const startIdx = (page - 1) * ITEMS_PER_PAGE;
-  const currentItems = transactions.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+  const currentItems = expenses.slice(startIdx, startIdx + ITEMS_PER_PAGE);
 
   const [formData, setFormData] = useState({
     id: null,
@@ -56,8 +56,8 @@ function TransactionTable({ transactions, deleteExpense, updateExpense }) {
         <em>Recent Transactions</em>
       </h2>
       <div className="transaction-card">
-        {transactions.length === 0 ? (
-          <p className="no-transactions">No Transactions!</p>
+        {expenses.length === 0 ? (
+          <p className="no-expenses">No Transactions!</p>
         ) : (
           currentItems.map((item) => (
             <div className="transaction-row" key={item.id}>
@@ -89,7 +89,7 @@ function TransactionTable({ transactions, deleteExpense, updateExpense }) {
           ))
         )}
 
-        {transactions.length > 0 && (
+        {expenses.length > 0 && (
           <div className="pagination">
             <button
               onClick={() => setPage((p) => Math.max(p - 1, 1))}

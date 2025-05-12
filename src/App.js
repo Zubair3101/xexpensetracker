@@ -23,8 +23,8 @@ function App() {
     return storedBal ? JSON.parse(storedBal) : 5000;
   });
 
-  const [transactions, setTransactions] = useState(() => {
-    const data = localStorage.getItem("transactions");
+  const [expenses, setExpenses] = useState(() => {
+    const data = localStorage.getItem("expenses");
     return data ? JSON.parse(data) : [];
   });
 
@@ -33,8 +33,8 @@ function App() {
   }, [balance]);
 
   useEffect(() => {
-    localStorage.setItem("transactions", JSON.stringify(transactions));
-  }, [transactions]);
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }, [expenses]);
 
   const addExpense = (newExpense) => {
     if (newExpense.amount > balance) {
@@ -42,16 +42,16 @@ function App() {
       return false;
     }
 
-    setTransactions((prev) => [...prev, { ...newExpense, id: Date.now() }]);
+    setExpenses((prev) => [...prev, { ...newExpense, id: Date.now() }]);
     setBalance((prev) => prev - newExpense.amount);
     enqueueSnackbar("Expense added!", { variant: "success" });
     return true;
   };
 
   const deleteExpense = (id) => {
-    const toDelete = transactions.find((t) => t.id === id);
+    const toDelete = expenses.find((t) => t.id === id);
     if (toDelete) {
-      setTransactions((prev) => prev.filter((t) => t.id !== id));
+      setExpenses((prev) => prev.filter((t) => t.id !== id));
       setBalance((prev) => prev + toDelete.amount);
       enqueueSnackbar("Expense deleted and amount refunded", {
         variant: "info",
@@ -60,14 +60,14 @@ function App() {
   };
 
   const updateExpense = (updatedExpense) => {
-  const oldTxn = transactions.find(t => t.id === updatedExpense.id);
+  const oldTxn = expenses.find(t => t.id === updatedExpense.id);
   if (!oldTxn) return;
 
   const amountDiff = updatedExpense.amount - oldTxn.amount;
 
   setBalance(prevBalance => prevBalance - amountDiff);
 
-  setTransactions(prev =>
+  setExpenses(prev =>
     prev.map(txn =>
       txn.id === updatedExpense.id ? updatedExpense : txn
     )
@@ -82,20 +82,20 @@ function App() {
       <h1>Expense Tracker</h1>
       <div className="overview-sect">
         <BalanceCard balance={balance} setBalance={setBalance} />
-        <ExpenseCard addExpense={addExpense} transactions={transactions}/>
-        <ExpensePieChart transactions={transactions} />
+        <ExpenseCard addExpense={addExpense} expenses={expenses}/>
+        <ExpensePieChart expenses={expenses} />
       </div>
       <div className="grid-layout">
         <div className="grid-left">
           <TransactionTable
-            transactions={transactions}
+            expenses={expenses}
             deleteExpense={deleteExpense}
             updateExpense={updateExpense}
           />
         </div>
 
         <div className="grid-right">
-          <ExpenseBarChart transactions={transactions} />
+          <ExpenseBarChart expenses={expenses} />
         </div>
       </div>
     </div>
